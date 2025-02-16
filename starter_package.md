@@ -21,15 +21,15 @@ https://rufus.ie/en/
 
 ##### post installation essentials 
 
-    system upgrade
+####### system upgrade
 ```bash 
 sudo pacman -Syu
 ```
-    essential packages 
+####### essential packages 
 ```bash
 sudo pacman -S nano git 
 ```
-    yay (AUR helper) 
+####### yay (AUR helper) 
 ```bash 
 sudo pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
@@ -38,29 +38,29 @@ makepkg -si
 ```
 ### 2. Custom Kernel and Nvidia drivers for ROG G14 
 
-    add the repo sign key 
+######  add the repo sign key 
 ```bash 
 pacman-key --recv-keys 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35
 pacman-key --finger 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35
 pacman-key --lsign-key 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35
 pacman-key --finger 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35
 ```
-    add to the /etc/pacman.conf/ (at the end)
+###### add to the /etc/pacman.conf/ (at the end)
 
 [g14]
 Server = https://arch.asus-linux.org
 
-    G14 kernel (needed for ROG GUI to work) 
+###### G14 kernel (needed for ROG GUI to work) 
 ```bash
 pacman -Sy linux-g14 linux-g14-headers
 grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
-    nvidia driver (yay nvidia-dkms)
+###### nvidia driver (yay nvidia-dkms)
 ```bash
 yay -S nvidia-dkms
 ```
-    asusctl, superctl and rog-control-center 
+###### asusctl, superctl and rog-control-center 
 
 ```bash
 pacman -S asusctl power-profiles-daemon
